@@ -4,17 +4,23 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
+      - name: Get code
+        uses: actions/checkout@v3
       - name: lint the code
         run: eslint --ext .jsx --fix src
   test:
     needs: lint
     runs-on: ubuntu-latest
     steps:
+      - name: Get code
+        uses: actions/checkout@v3
       - name: test the code
         run: npm run test
   deploy:
     needs: test
     runs-on: ubuntu-latest
     steps:
+      - name: Get code
+        uses: actions/checkout@v3
       - name: deploy the code
         run: echo "deploying the code..."
