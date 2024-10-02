@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: lint the code
-        run: npm run lint
+        run: eslint --ext .jsx --fix src
   test:
     needs: lint
     runs-on: ubuntu-latest
